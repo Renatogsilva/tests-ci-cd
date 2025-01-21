@@ -34,14 +34,18 @@ pipeline {
     stages {
         stage('Clone') {
             steps {
-                echo 'Clonando projeto...'
+                sh 'Clonando projeto...'
             }
         }
         stage('Build') {
-            echo 'Buildando projeto...'
+            steps {
+                echo 'Buildando projeto...'
+            }
         }
         stage('Run Tests') {
-            echo 'Executando projeto...'
+            steps {
+                echo 'Executando projeto...'
+            }
         }
     }
 }
