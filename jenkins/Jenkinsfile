@@ -1,0 +1,16 @@
+pipeline{
+    agent none
+    tools {
+        jdk 'JDK_21'
+        maven 'Maven_3.8'
+    }
+    stages{
+        stage('Automação de teste'){
+            steps{
+                script {
+                    sh 'mvn test'
+                }
+            }
+        }
+    }
+}
