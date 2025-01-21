@@ -30,9 +30,7 @@
 
 pipeline {
     agent {
-        docker {
-            'openjdk:21-jdk'
-        }
+        docker { image 'openjdk:21-jdk' }
     }
 
     stages {
