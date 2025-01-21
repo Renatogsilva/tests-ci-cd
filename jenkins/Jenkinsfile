@@ -39,7 +39,11 @@ pipeline {
             }
         }
         stage('Build') {
-            agent {docker 'openjdk:21-jdk'}
+            agent {
+                docker {
+                    'openjdk:21-jdk'
+                }
+            }
             steps {
                 sh 'mvn test'
             }
