@@ -29,12 +29,15 @@
 //}
 
 pipeline {
-    agent any
+    agent none
 
     stages {
         stage('Clone') {
+            agent {
+                docker { image 'maven:3.9.9-eclipse-temurin-21-alpine' }
+            }
             steps {
-                sh 'echo Clonando projeto...'
+                sh 'mvn --version'
             }
         }
         stage('Build') {
