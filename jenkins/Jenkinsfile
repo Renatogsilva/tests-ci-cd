@@ -29,16 +29,22 @@
 //}
 
 pipeline {
-    agent {
-        docker {
-            image 'maven:3.9.3-eclipse-temurin-17'
-            args '-v $HOME/.m2:/root/.m2'
-        }
-    }
+    agent any
+
     stages {
+        stage('Clone') {
+            steps {
+                sh 'echo Clonando projeto...'
+            }
+        }
         stage('Build') {
             steps {
-                sh 'mvn -B'
+                sh 'Buildando projeto...'
+            }
+        }
+        stage('Run Tests') {
+            steps {
+                sh 'Executando projeto...'
             }
         }
     }
