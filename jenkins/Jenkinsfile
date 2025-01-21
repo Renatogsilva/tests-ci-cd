@@ -1,28 +1,46 @@
+//pipeline {
+//    agent any
+//    tools {
+//        jdk 'JAVA_HOME'
+//        maven 'MAVEN'
+//    }
+//    stages {
+//        stage("Clone") {
+//            steps {
+//                script {
+//                    checkout scm
+//                    sh "git fech"
+//                    sh "git checkout main"
+//                    sh "git pull origin main"
+//                }
+//            }
+//            stage("Build") {
+//                steps {
+//                    sh "mvn install -DskipTests"
+//                }
+//            }
+//            stage("Run Tests"){
+//                steps{
+//                    sh "mvn test"
+//                }
+//            }
+//        }
+//    }
+//}
+
 pipeline {
     agent any
-    tools {
-        jdk 'JAVA_HOME'
-        maven 'MAVEN'
-    }
+
     stages {
         stage("Clone") {
             steps {
-                script {
-                    checkout scm
-                    sh "git fech"
-                    sh "git checkout main"
-                    sh "git pull origin main"
-                }
+                echo "Clonando projeto..."
             }
             stage("Build") {
-                steps {
-                    sh "mvn install -DskipTests"
-                }
+                echo "Buildando projeto..."
             }
             stage("Run Tests"){
-                steps{
-                    sh "mvn test"
-                }
+                echo "Executando projeto..."
             }
         }
     }
