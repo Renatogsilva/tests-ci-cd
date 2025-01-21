@@ -29,7 +29,11 @@
 //}
 
 pipeline {
-    agent none
+    agent {
+        docker {
+            'openjdk:21-jdk'
+        }
+    }
 
     stages {
         stage('Clone') {
@@ -39,11 +43,6 @@ pipeline {
             }
         }
         stage('Build') {
-            agent {
-                docker {
-                    'openjdk:21-jdk'
-                }
-            }
             steps {
                 sh 'mvn test'
             }
