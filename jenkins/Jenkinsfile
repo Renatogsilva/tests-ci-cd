@@ -35,20 +35,18 @@ pipeline {
 
     stages {
         stage('Clone') {
-            agent any
             steps {
                 sh 'echo Clonando projeto...'
             }
         }
         stage('Build') {
             steps {
-                sh 'mvn test'
+                sh 'mvn clean install -DskipTests' // ou o comando de build desejado
             }
         }
         stage('Run Tests') {
-            agent any
             steps {
-                sh 'echo Executando projeto...'
+                sh 'mvn test'
             }
         }
     }
