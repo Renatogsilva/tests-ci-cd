@@ -29,20 +29,23 @@
 //}
 
 pipeline {
-    agent any
+    agent none
 
     stages {
+        agent any
         stage('Clone') {
             steps {
                 sh 'echo Clonando projeto...'
             }
         }
         stage('Build') {
+            agent {docker 'openjdk:21-jdk'}
             steps {
-                sh 'echo Buildando projeto...'
+                sh 'mvn test'
             }
         }
         stage('Run Tests') {
+            agent any
             steps {
                 sh 'echo Executando projeto...'
             }
