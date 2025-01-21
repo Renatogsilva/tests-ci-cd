@@ -1,8 +1,8 @@
 pipeline{
     agent none
     tools {
-        jdk 'JDK_21'
-        maven 'Maven_3.8'
+        jdk 'JAVA_HOME'
+        maven 'MAVEN'
     }
     stages{
         stage('Automação de teste'){
