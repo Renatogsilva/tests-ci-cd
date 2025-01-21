@@ -1,4 +1,5 @@
 import io.restassured.RestAssured;
+import io.restassured.filter.log.LogDetail;
 import io.restassured.filter.log.RequestLoggingFilter;
 import io.restassured.filter.log.ResponseLoggingFilter;
 import io.restassured.http.ContentType;
@@ -9,7 +10,7 @@ import org.junit.jupiter.api.Test;
 public class BookingApiTests {
     private RequestSpecification requestSpecification = RestAssured.given()
             .baseUri("https://restful-booker.herokuapp.com")
-            .filters(new RequestLoggingFilter(), new ResponseLoggingFilter());
+            .filters(new RequestLoggingFilter(LogDetail.PARAMS), new ResponseLoggingFilter());
 
     @Test
     @DisplayName(value = "GET BOOKING BY ID")
