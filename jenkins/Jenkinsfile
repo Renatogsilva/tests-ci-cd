@@ -32,8 +32,8 @@ pipeline {
     agent none
 
     stages {
-        agent any
         stage('Clone') {
+            agent any
             steps {
                 sh 'echo Clonando projeto...'
             }
