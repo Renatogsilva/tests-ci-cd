@@ -29,9 +29,7 @@
 //}
 
 pipeline {
-    agent {
-        docker { image 'openjdk:21-jdk' }
-    }
+    agent any
 
     stages {
         stage('Clone') {
