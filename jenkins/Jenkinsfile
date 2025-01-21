@@ -39,12 +39,12 @@ pipeline {
         }
         stage('Build') {
             steps {
-                echo 'Buildando projeto...'
+                sh 'Buildando projeto...'
             }
         }
         stage('Run Tests') {
             steps {
-                echo 'Executando projeto...'
+                sh 'Executando projeto...'
             }
         }
     }
