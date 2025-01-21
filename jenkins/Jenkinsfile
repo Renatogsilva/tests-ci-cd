@@ -32,16 +32,16 @@ pipeline {
     agent any
 
     stages {
-        stage("Clone") {
+        stage('Clone') {
             steps {
                 echo "Clonando projeto..."
             }
-            stage("Build") {
-                echo "Buildando projeto..."
-            }
-            stage("Run Tests"){
-                echo "Executando projeto..."
-            }
+        }
+        stage('Build') {
+            echo "Buildando projeto..."
+        }
+        stage('Run Tests') {
+            echo "Executando projeto..."
         }
     }
 }
