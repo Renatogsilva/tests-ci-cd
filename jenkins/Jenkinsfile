@@ -39,7 +39,7 @@ pipeline {
         }
         stage('Build') {
             steps {
-                sh 'echo Buildando projeto...'
+                sh 'mvn --version'
             }
         }
         stage('Run Tests') {
