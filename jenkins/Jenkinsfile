@@ -34,7 +34,7 @@ pipeline {
     stages {
         stage('Clone') {
             steps {
-                sh 'echo Clonando projeto...'
+                sh 'java --version'
             }
         }
         stage('Build') {
