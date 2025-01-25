@@ -53,10 +53,11 @@ pipeline {
         }
         stage('Report') {
             steps {
-                post {
-                    always {
-                        allure includeProperties: false, jdk: '', results: [[path: 'allure-results']]
-                    }
+                sh 'echo generate test'
+            }
+            post {
+                always {
+                    allure includeProperties: false, jdk: '', results: [[path: 'allure-results']]
                 }
             }
         }
